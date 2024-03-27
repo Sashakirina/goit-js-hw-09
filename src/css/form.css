@@ -1,0 +1,51 @@
+.feedback-form{
+ display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;   
+padding: 24px;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;  
+    font-family: "Montserrat", sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #2e2f42;
+
+}
+label:last-child{
+    margin-bottom: 16px;
+}
+input, textarea{
+    border: 1px solid #808080;
+border-radius: 4px;
+width: 360px;
+height: 40px;
+}
+
+input:hover, textarea:hover{
+    border-radius: 4px;
+    border: 1px solid #000;
+}
+
+button{
+    color: #FFF;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.5em;
+letter-spacing: 0.64px;
+border-radius: 8px;
+background: #4E75FF;
+border: none;
+}
+
+button:hover{
+    background: #6C8CFF;
+}
