@@ -90,3 +90,6 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
     
+import captionsData from "simplelightbox";
+
+const caption = new captionsData('.gallery img.alt');
