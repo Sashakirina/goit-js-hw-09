@@ -15,14 +15,14 @@ message.value = formData.message || '';
 
 function handleInput(event){
 
-   formData[event.target.name] = event.target.value;
+   formData[event.target.name] = event.target.value.trim();
 localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
 }
 
 function handleSubmit(event){
     event.preventDefault();
-    if (email.value === `` ||
-    message.value === ``){
+    if (email.value.trim() === `` ||
+    message.value.trim() === ``){
 alert(`Поля повинні бути заповнені`);
     }else{
       email.value = ``;
