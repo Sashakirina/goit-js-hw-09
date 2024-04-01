@@ -8,15 +8,27 @@ formEl.addEventListener(`submit`, handleSubmit);
 
 const {email, message} = formEl.elements;
 
-let formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? {};
+console.log(email);
 
-email.value = formData.email || '';
-message.value = formData.message || '';
+
+let formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? {};
+if(formData){
+  email.value = formData.email || ``;
+message.value = formData.message || ``;
+}
+
+
 
 function handleInput(event){
 
-   formData[event.target.name] = event.target.value.trim();
-localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
+localStorage.removeItem(STORAGE_KEY);
+
+formData = {
+  email : email.value.trim(),
+  message : message.value.trim(),
+};
+ 
+localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
 function handleSubmit(event){
@@ -25,9 +37,9 @@ function handleSubmit(event){
     message.value.trim() === ``){
 alert(`Поля повинні бути заповнені`);
     }else{
-      email.value = ``;
-    message.value = ``;
- localStorage.removeItem(STORAGE_KEY);
-console.log(formData); 
+      event.target.reset();
+      localStorage.removeItem(STORAGE_KEY);
+    console.log(formData); 
+  }
     }
-    }
+
